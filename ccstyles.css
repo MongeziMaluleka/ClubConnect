@@ -18,8 +18,19 @@
 .btn:hover{
     background-color: #3c64a3;
     border-color: #3c64a3;
+}
 
+.rainbow-icon {
+    font-size: 50px; /* Adjust size as needed */
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+    vertical-align: middle;
+}
 
+.join-buttons img{
+    max-height: 36px;
 }
 
 .video-responsive {
