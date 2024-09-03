@@ -146,10 +146,13 @@
             <div class="card-body">
               <h5 class="card-title">tech_wednesdays_</h5>
               <p class="card-text">Every Wednesday, we host Tech Wednesday where members come together to discuss the latest trends in technology, work on projects, and collaborate on innovative ideas. It's a great way to stay ahead and connect with fellow tech enthusiasts.</p>
-              <a href="#" class="btn btn-warning cc-btns-light cc-links">View gallery</a>
+              <a class="btn btn-warning cc-btns-light cc-links" data-bs-toggle="modal" href="#carouselModal" role="button">View gallery</a>
             </div>
           </div>
         </div>
+
+          <!-- Tech Wednesdays Gallery -->
+      
 
         <!-- Hackathon activity -->
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 p-2">
@@ -169,7 +172,7 @@
             <div class="card-body">
               <h5 class="card-title">Hallowee'n</h5>
               <p class="card-text">Our Halloween event is a fun-filled evening where students can enjoy themed activities, games, and networking opportunities. It's a great way to celebrate the season and bond with fellow members in a festive atmosphere.</p>
-              <a href="#" class="btn btn-warning cc-btns-light cc-links">Go to Gallery</a>
+              <a data-bs-toggle="modal" href="#carouselModal" role="button" class="btn btn-warning cc-btns-light cc-links">View Gallery</a>
             </div>
           </div>
         </div>
@@ -232,6 +235,46 @@
       </div>
     </div>
   </footer>
+
+  <!-- Tech Wednesdays Gallery -->
+  <!-- Modal for Carousel -->
+<div class="modal fade" id="carouselModal" tabindex="-1" aria-labelledby="carouselModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="carouselModalLabel">TechWednesdays Gallery</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-light bg-body-light" data-bs-theme="dark">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="./assets/Popsnerd.jpeg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./assets/POPSMPUME.jpeg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./assets/POPSNYARI.jpeg" alt="Third slide">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+      </div>
+    </div>
+  </div>
       
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
