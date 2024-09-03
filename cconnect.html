@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./ccstyles.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">ClubConnect</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,22 +21,22 @@
                 <a class="nav-link" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About Us</a>
+                <a class="nav-link" href="#about-section">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">How To Join</a>
+                <a class="nav-link" href="#join-section">How To Join</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#clubs-section" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Clubs
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Robotics Club</a></li>
-                  <li><a class="dropdown-item" href="#">WomenThinkCode_</a></li>
-                  <li><a class="dropdown-item" href="#">TechWednesdays</a></li>
-                  <li><a class="dropdown-item" href="#">Peer Lift</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#robo-club">Robotics Club</a></li>
+                  <li><a class="dropdown-item" href="#wxtc-club">WomenThinkCode_</a></li>
+                  <li><a class="dropdown-item" href="#bts-club">Break The Silence</a></li>
+                  <li><a class="dropdown-item" href="#peer-club">Peer Lift</a></li>
+                  <!-- <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                 </ul>
               </li>
               <li class="nav-item">
@@ -49,13 +51,184 @@
         </div>
     </nav>
     <!-- Hero Section -->
-    <section class="hero-section" data-bs-theme="dark">
-    <div class="container text-center">
+    <section id="#" class="hero-section text-light bg-body-tertiary pt-4" data-bs-theme="dark">
+    <div class="container text-center p-5">
         <h1>Welcome to ClubConnect</h1>
         <p>Discover, Connect, and Grow with WeThinkCode_ Communities</p>
-        <button type="button" class="btn btn-warning"><a href="https://join.slack.com/t/your-slack-workspace/signup" >Join Us Now</a></button>
+        <button type="button" class="btn btn-warning"><a class="cc-links" href="https://join.slack.com/t/your-slack-workspace/signup" >Join Us Now</a></button>
     </div>
     </section>
+
+    <!-- About Section -->
+    <section id="about-section" class="container-fluid text-dark bg-body-tertiary">
+      <div class="container text-left p-5">
+        <h3>About ClubConnect</h3>
+        <p>ClubConnect is all about bringing WeThinkCode_ students together to explore and engage in their own interests through various groups and clubs. Whether you're passionate about technology, coding, or innovation, there's a community here for you.</p>
+        <a href="#more-about" class="btn btn-warning">Learn More</a>
+      </div>
+    </section>
+
+    <!-- How to Join Section -->
+    <section id="join-section" class="container-fluid text-dark bg-body-tertiary">
+      <div class="container text-center p-5">
+        <h3>How to Join</h3>
+        <p>Joining a group on ClubConnect is simple! Just find a club that interests you, and connect with the group on Slack. Stay updated with events, meetings, and activities, and start connecting with like-minded peers.</p>
+        <a href="https://join.slack.com/t/your-slack-workspace/signup" class="btn btn-warning" target="_blank">Join on Slack</a>
+        <i class="fab fa-slack fa-2x"></i>
+      </div>
+    </section>
+
+    <!-- Clubs Section -->
+  <section id="clubs-section" class="container-fluid text-dark bg-body-primary">
+    <div class="container text-left p-5">
+      <h1>Explore Our Clubs</h1>
+      
+      <!-- Robotics Club -->
+      <div id="robo-club" class="row p-2">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 col-xl-8 p-2">
+          <h3>Robotics Club</h3>
+          <p>Join the Robotics Club to explore the exciting world of AI, Robotics, and innovative technologies. Our members participate in hands-on projects and competitions, collaborate on groundbreaking ideas, and develop skills in programming and engineering. Whether you're a beginner or an expert, there's a place for you in our community.</p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 p-2">
+          <video controls class="video-responsive">
+            <source src="RoboticsVid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- Women Think Code Club -->
+      <div id="wxtc-club"class="row p-2">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 col-xl-8 p-2">
+          <h3>Women Think Code Club</h3>
+          <p>Empowering women in technology, the Women Think Code Club is dedicated to fostering a supportive environment where women can learn, grow, and succeed in tech fields. We offer workshops, mentorship programs, and networking opportunities that help our members gain confidence and build careers in the tech industry.</p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 p-2">
+          <img  class="video-responsive" src="black-girls.jpg" alt="Women Think Code Club">
+        </div>
+      </div>
+
+      <!-- Break The Silence [BTS] -->
+      <div id="bts-club" class="row p-2">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 col-xl-8 p-2">
+          <h3>Break The Silence Club</h3>
+          <p>The "Break the Silence Club" is a supportive community where students can build their confidence and enhance their presentation skills. Shy students have the opportunity to practice speaking in a safe, encouraging environment, while their peers volunteer as assessors, providing constructive feedback and fostering a spirit of growth and mutual support. This club aims to empower every student to find their voice and shine in both academic and social settings.</p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 p-2">
+          <img class="video-responsive" src="presentation.jpg" alt="PeerLift Club">
+        </div>
+      </div>
+
+      <!-- PeerLift Club -->
+      <div id="peer-club" class="row p-2">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 col-xl-8 p-2">
+          <h3>PeerLift Club</h3>
+          <p>Welcome to PeerLift, where collaboration meets growth. Our club is dedicated to building a vibrant community where peers come together to support each other in their tech journeys. We focus on problem-solving, skill development, and leadership through dynamic group activities, coding challenges, and knowledge-sharing sessions. By rotating leadership roles and encouraging collective problem-solving, PeerLift aims to enhance both technical skills and soft skills, fostering an environment where every member can thrive and reach their full potential.</p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 p-2">
+          <img class="video-responsive" src="black-kids.jpg" alt="PeerLift Club">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVITIES SEECTION -->
+  <section id="activities-section" class="container-fluid text-dark bg-body-tertiary p-5">
+    <div class="container"><h2>Other Activities</h2></div>
+    <div class="container">
+      <div class="row">
+        <!-- tech_wednesdays activity -->
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 p-2">
+          <div class="card p-2" style="width: 18rem;">
+            <img src="girl-everything.png" class="card-img-top" alt="placeholder image">
+            <div class="card-body">
+              <h5 class="card-title">tech_wednesdays_</h5>
+              <p class="card-text">Every Wednesday, we host Tech Wednesday where members come together to discuss the latest trends in technology, work on projects, and collaborate on innovative ideas. It's a great way to stay ahead and connect with fellow tech enthusiasts.</p>
+              <a href="#" class="btn btn-warning">View gallery</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hackathon activity -->
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 p-2">
+          <div class="card p-2" style="width: 18rem;">
+            <img src="clubconnectbackground.jpeg" class="card-img-top" alt="placeholder image">
+            <div class="card-body">
+              <h5 class="card-title">Hackathons</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-warning">Explore projects</a>
+            </div> 
+        </div>
+      </div>
+      <!-- Halloween event -->
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 p-2">
+          <div class="card p-2" style="width: 18rem;">
+            <img src="halloween.jpg" class="card-img-top" alt="placeholder image">
+            <div class="card-body">
+              <h5 class="card-title">Hallowee'n</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-warning">Go to Gallery</a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="container-fluid testimonials-section p-2 m-5">
+    <div class="container p-2">
+      <h2>What Our Members Say</h2>
+      <!-- dumza testimonial -->
+      <div class="card p-2 m-3">
+        <div class="card-header">
+          <div class="avatar"><img src="dumza-popeye.jpg" /></div>
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>"Joining the Robotics Club has been a game-changer for me. I've learned so much and met amazing people!"</p>
+            <footer class="blockquote-footer">Dumza, <cite title="Source Title">Robotics Club Member</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+      <!-- ayakhanya testimonial -->
+      <div class="card p-2 m-3">
+        <div class="card-header">
+          <div class="avatar"><img src="ayakhanya-popeye.jpg" /></div>
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>"Women Think Code has empowered me to pursue a career in tech with confidence."</p>
+            <footer class="blockquote-footer">Ayakhanya, <cite title="Source Title">Women Think Code Member</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+      <!-- bongiwe testimonial -->
+      <div class="card p-2 m-3">
+        <div class="card-header">
+          <div class="avatar"><img src="bongiwe-popeye.jpg" /></div>
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>"Thanks to the Break the Silence Society, I overcame my shyness and confidently presented at a recorded livestream event. The support from my peers has been life-changing!" </p>
+            <footer class="blockquote-footer">Bongiwe, <cite title="Source Title">Break The Silence Society Member</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="container-fluid text-light bg-body-tertiary p-5 mt-0" data-bs-theme="dark">
+    <div class="container text-center">
+      <div class="footer-content">
+        <p>Follow us on social media:</p>
+        <a href="https://facebook.com" class="cc-links"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com" class="cc-links"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" class="cc-links"><i class="fab fa-instagram"></i></a>
+        <p>© 2024 ClubConnect. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
       
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
