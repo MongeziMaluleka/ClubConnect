@@ -35,18 +35,9 @@
                   <li><a class="dropdown-item" href="#wxtc-club">WomenThinkCode_</a></li>
                   <li><a class="dropdown-item" href="#bts-club">Break The Silence</a></li>
                   <li><a class="dropdown-item" href="#peer-club">Peer Lift</a></li>
-                  <!-- <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
           </div>
         </div>
     </nav>
@@ -55,7 +46,7 @@
     <div class="container text-center p-5">
         <h1>Welcome to ClubConnect</h1>
         <p>Discover, Connect, and Grow with WeThinkCode_ Communities</p>
-        <button type="button" class="btn btn-warning cc-btns"><a class="cc-links" href="https://join.slack.com/t/your-slack-workspace/signup" >Join Us Now</a></button>
+        <button type="button" class="btn btn-warning cc-btns"><a class="cc-links" href="#join-section" >Join Us Now</a></button>
     </div>
     </section>
 
@@ -141,17 +132,15 @@
       <div class="row">
         <!-- tech_wednesdays activity -->
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 p-2">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 p-2">
-
-          <video controls class="video-responsive">
-            <source src="./assets/TechWedn.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <div class="card p-2" style="width: 18rem;">
+            <video controls class="card-img-top">
+              <source src="./assets/TechWedn.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
             <div class="card-body">
               <h5 class="card-title">tech_wednesdays_</h5>
               <p class="card-text">Every Wednesday, we host Tech Wednesday where members come together to discuss the latest trends in technology, work on projects, and collaborate on innovative ideas. It's a great way to stay ahead and connect with fellow tech enthusiasts.</p>
-              <a href="https://github.com/SinomthaMzamo/minesweeper-dbn-womentc/blob/main/README.md" class="btn btn-warning cc-btns-light cc-links" target="_blank">View MineSweeper</a>
-
+              <a class="btn btn-warning cc-btns-light cc-links" href="https://github.com/SinomthaMzamo/minesweeper-dbn-womentc/blob/main/README.md" role="button">View MineSweeper</a>
             </div>
           </div>
         </div>
@@ -163,7 +152,7 @@
             <div class="card-body">
               <h5 class="card-title">Hackathons</h5>
               <p class="card-text">We regularly organize hackathons that bring together students from various backgrounds to work on challenging problems, create innovative solutions, and showcase their skills. These events foster teamwork, creativity, and problem-solving abilities.</p>
-              <a href="hackathons.html" class="btn btn-warning cc-btns-light cc-links" target="_blank">Explore Hackathons</a>
+              <a href="#hackathonsGallery"  role="button" data-bs-toggle="modal" class="btn btn-warning cc-btns-light cc-links" target="_blank">Explore Hackathons</a>
 
             </div>
         </div>
@@ -176,7 +165,7 @@
             <div class="card-body">
               <h5 class="card-title">Hallowee'n</h5>
               <p class="card-text">Our Halloween event is a fun-filled evening where students can enjoy themed activities, games, and networking opportunities. It's a great way to celebrate the season and bond with fellow members in a festive atmosphere.</p>
-              <a href="halloween.html" class="btn btn-warning cc-btns-light cc-links" target="_blank">View Gallery</a>
+              <a href="#halloweenGallery" role="button" data-bs-toggle="modal" class="btn btn-warning cc-btns-light cc-links" target="_blank">View Gallery</a>
 
             </div>
           </div>
@@ -233,7 +222,7 @@
       <div class="card p-2 m-3">
         <div class="card-header">
             <div class="avatar">
-                <img src="assets/IMG-20240122-WA0024 (1).jpg" alt="Nokwanda's Picture" />
+                <img src="assets/NokwandaPic.jpg" alt="Nokwanda's Picture" />
             </div>
         </div>
         <div class="card-body">
@@ -259,6 +248,106 @@
     </div>
   </footer>
 
+    <!-- Modal for Halloween Gallery Carousel -->
+<div class="modal fade" id="halloweenGallery" tabindex="-1" aria-labelledby="carouselModalLabelH" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="carouselModalLabelH">Halloween Gallery</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-light bg-body-light" data-bs-theme="dark">
+        <div id="carouselExampleIndicatorsH" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          </div>
+          <div class="carousel-inner">
+            <!-- Carousel items for Halloween -->
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="assets/HalloweenGallery/Senzo01.jpg" alt="Halloween">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="assets/HalloweenGallery/IMG_1870.jpg" alt="Halloween">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="assets/HalloweenGallery/IMG_1873.jpg" alt="Halloween">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="assets/HalloweenGallery/IMG_1875.jpg" alt="Halloween">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="assets/HalloweenGallery/IMG_1878.jpg" alt="Halloween">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Hackathons Gallery Carousel -->
+<div class="modal fade" id="hackathonsGallery" tabindex="-1" aria-labelledby="carouselModalLabelHackathon" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="carouselModalLabelHackathon">Hackathons Gallery</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-light bg-body-light" data-bs-theme="dark">
+        <div id="carouselExampleIndicatorsHackathon" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          </div>
+          <div class="carousel-inner">
+            <!-- Carousel items for Hackathons -->
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="assets/hackathonContent/MukuruH.jpeg" alt="Mukuru Hackathon">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="assets/hackathonContent/GirlCode-dbn-2.jpeg" alt="Mukuru Hackathon">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="assets/hackathonContent/NERDMA-pops.jpeg" alt="Mukuru Hackathon">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="assets/hackathonContent/DBN-Mukuru.jpeg" alt="Mukuru Hackathon">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="assets/hackathonContent/Nokubonga'sTeam-Mukuru.jpeg" alt="Mukuru Hackathon">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
