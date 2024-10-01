@@ -49,7 +49,7 @@ Clone the Repository:
 
 bash
 Copy code
-git clone https://gitlab.com/your-username/clubconnect.git
+git clone git@github.com:ongerh/ClubConnect.git
 Navigate into the project directory:
 
 bash
