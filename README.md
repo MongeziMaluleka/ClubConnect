@@ -14,18 +14,30 @@ Technologies Used
 This project is built using the following technologies:
 
 HTML5: For structuring the content on the pages.
+
 CSS3: For styling the website.
+
 Bootstrap 5: A popular front-end framework for responsive design.
+
 JavaScript (Vanilla): For interactivity and dynamic content.
+
 Popper.js: Used for positioning Bootstrap's interactive components like tooltips.
+
 FontAwesome: For icons across the site.
+
 Features
 Responsive Carousel: Display images with smooth transitions and auto-adjusted sizes for different screen resolutions.
+
 Interactive Video Cards: Hover effects that enhance user engagement by scaling and adding a box shadow.
+
 Fixed Navigation Bar: A sticky navigation bar that remains visible as you scroll through the page, with smooth scrolling to each section.
+
 Club Sections: Individual sections for different clubs, highlighting their events, activities, and contact information.
+
 Social Media Links: Easily accessible buttons that link to each club's social media pages.
+
 Custom Animations: Hover effects on buttons and icons for a more interactive user experience.
+
 Setup and Installation
 Prerequisites
 Ensure you have the following installed on your machine:
