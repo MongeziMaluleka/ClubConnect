@@ -10,19 +10,27 @@
   <body>
     <div class="form-container">
       <h2>Submit Your Testimonial</h2>
-      <form action="#" method="post" enctype="multipart/form-data">
+      <form action="http://127.0.0.1:5000/submit" method="post" enctype="multipart/form-data">
         <div class="form-group">
-          <label for="testimonial">Your Testimonial</label>
+          <label for="testimonial">
+            Your Testimonial
+            <span class="input-error" id="testimonial-error" style="font-weight: 300; font-style: italic; color: brown;"></span>
+          </label>
           <textarea
             id="testimonial"
             name="testimonial"
             placeholder="Write your testimonial here..."
-            required
+            oninput="reportWordCount()"
           ></textarea>
+          <p id="char-count">
+            <span id="char-current">0</span> <span id="char-limit">/500</span>
+          </p>
         </div>
 
         <div class="form-group">
-          <label for="name">Your Name</label>
+          <label for="name">Your Name
+            <span class="input-error" id="name-error" style="font-weight: 300; font-style: italic; color: brown;"></span>
+          </label>
           <input
             type="text"
             id="name"
@@ -33,19 +41,28 @@
         </div>
 
         <div class="form-group">
-          <label for="image">Upload Your Image</label>
+          <label for="image">
+            Upload Your Image
+            <span class="input-error" id="image-error" style="font-weight: 300; font-style: italic; color: brown;"></span>
+          </label>
           <input
             type="file"
             id="image"
             name="image"
             accept="image/*"
             required
+            multiple
           />
+          <div>
+            <p id="supported-formats">JPEG, JPG, PNG, SVG </p>
+          </div>
         </div>
 
         <button type="submit" class="submit-btn">Submit Testimonial</button>
         <button type="save" class="save-btn">Save Draft</button>
+        <p id="report-form-submission-outcome"></p>
       </form>
     </div>
+    <script src="./submitTestimonial.js"></script>
   </body>
 </html>
