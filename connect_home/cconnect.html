@@ -239,6 +239,37 @@
       </div>
     </div>
 
+    <!-- New Testimonials section -->
+     <script id="dynamic-testimonials" type="text/handlebars-template">
+        <section class="container-fluid new-testimonials p-2 m-5">
+            <div class="container p-2">
+                <h2>More of What Our Members Say</h2>
+                <!-- testimonial template -->
+                <ol>
+                  {{#each newTestimonial}}
+                  <li class="testimonial">
+                    <div class="card p-2 m-3">
+                      <div class="card-header">
+                        <div class="avatar"><img src={`../assets/${this.avatarImage}`}  alt={`${this.name}Picture`}/></div>
+                      </div>
+                      <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                          <p>{{this.testimonial}}</p>
+                          <footer class="blockquote-footer">{{this.name}}, <cite title="Source Title">{{this.tagline}</cite></footer>
+                        </blockquote>
+                      </div>
+                    </div>
+                  </li>
+                </ol>
+            </div>
+        </section>
+     </script>
+
+     <div id="newbies">
+        
+     </div>
+    
+
     <!-- Content Submission Section-->
     <section class="container-fluid content-submission-section p-2 m-5">
       <div class="container p-2">
@@ -360,6 +391,14 @@
   </div>
 </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+    <!-- the vanilla-router library-->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-router@1.2.8/index.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-</html>
+    <script src="ccscript.js"></script>
+ </html>

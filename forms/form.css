@@ -8,6 +8,13 @@ body {
     margin: 0;
 }
 
+.scrollable-container {
+    max-height: 720px; /* Set the maximum height */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    border: 1px solid #ccc; /* Optional: Add a border for visibility */
+}
+
 .form-container {
     background-color: #ffffff;
     border-radius: 8px;
@@ -27,7 +34,7 @@ body {
 .form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
+    margin-bottom: 50px;
 }
 
 .form-group label {

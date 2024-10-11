@@ -88,7 +88,8 @@ pip install -r requirements.txt
 ## Usage
 2. **Run the ClubConnect server**:
 ```bash
-python3 backend/api_server.py
+cd backend/
+python3 api_server.py
 ```
 3. **Run the web server on port 8088**:  (*ensure you are in the ClubConnect directory*)
 ```bash

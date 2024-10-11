@@ -1,17 +1,17 @@
 const form = document.querySelector('form');
 
-const reportWordCount = () => {
-    const characterCount = document.getElementById('char-current')
-    const testimonial = document.getElementById('testimonial');
+const reportWordCount = (currentCharacterCountId, testimonialItemId, wordCountThreshold) => {
+    const characterCount = document.getElementById(currentCharacterCountId);
+    const testimonial = document.getElementById(testimonialItemId);
     const numberOfCharacters = testimonial.value.length;
-    characterCount.firstChild.textContent = numberOfCharacters;
-    if (numberOfCharacters > 485){
+    characterCount.textContent = `${numberOfCharacters}/${wordCountThreshold}`; // Corrected this line
+    if (numberOfCharacters > wordCountThreshold - 15) {
         characterCount.style.color = 'brown';
-    } else{
+    } else {
         characterCount.style.color = 'inherit';
     }
     console.log(testimonial.value.length);
-}
+};
 
 const handleSubmit = (event) => {
     event.preventDefault();
@@ -44,12 +44,16 @@ form.addEventListener('submit', handleSubmit);
 const validateForm = () => {
     // get form fields
     const testimonial = document.getElementById('testimonial');
+    const tagline = document.getElementById('tagline');
+    const username = document.getElementById('username');
     const name = document.getElementById('name');
     const image = document.getElementById('image');
 
     let isValid = true;
     const errorMessagesMap = {
         testimonial: '',
+        tagline: '',
+        username: '',
         name: '',
         image: '',
     };
@@ -60,9 +64,21 @@ const validateForm = () => {
         isValid = false;
     }
 
+    // validate tagline character count
+    if (testimonial.value.length < 30) {
+        errorMessagesMap.tagline = 'Tagline must at least be 30 characters.';
+        isValid = false;
+    }
+
     // validate name field: should be filled in
     if(!name.value.trim()) {
         errorMessagesMap.name = 'Name is required.';
+        isValid = false;
+    }
+
+    // validate name field: should be filled in
+    if(!name.value.trim()) {
+        errorMessagesMap.username = 'A valid WeThinkCode username is required.';
         isValid = false;
     }
 
