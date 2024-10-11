@@ -3,3 +3,5 @@
 backend/.venv/
 .env
 credentials.json
+service-key.json
+testimonial-service.json
