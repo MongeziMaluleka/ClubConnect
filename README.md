@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**ClubConnect** is a responsive and interactive website designed to bring the WeThinkCode_ community together through various school clubs, such as the Robotics Club, Women Think Code Club, and more. The website features stories, videos, events, and opportunities for students to engage with their peers and stay updated on club activities.
+**ClubConnect** is a responsive and interactive website designed to bring the WeThinkCode_ community together through various school clubs, such as the Robotics Club, Women Think Code Club, and more. The website features stories, videos, events, and opportunities for students to engage with their peers and stay updated on club activities. Users with a valid WeThinkCode_ username can now upload testimonials, including images and descriptions of their club experiences.
 
 ---
 
@@ -12,8 +12,11 @@
 - [Technologies Used](#technologies-used)
 - [Features](#features)
 - [Setup and Installation](#setup-and-installation)
+   - [Prerequisites](#prerequisites)
+   - [Basic Setup](#basic-setup)
+   - [Installation Steps](#installation-steps)
+- [Usage](#usage)
 - [Project Structure](#project-structure)
-- [Contributing](#contributing)
 - [License](#license)
 
 ---
@@ -39,6 +42,7 @@ This project is built using the following technologies:
 - **Club Sections**: Individual sections for different clubs, highlighting their events, activities, and contact information.
 - **Social Media Links**: Easily accessible buttons that link to each club's social media pages.
 - **Custom Animations**: Hover effects on buttons and icons for a more interactive user experience.
+- **Testimonial Uploads**: Users with a valid WeThinkCode_ username can upload testimonials, including images and descriptions of their club experiences.
 
 ---
 
@@ -51,8 +55,9 @@ Ensure you have the following installed on your machine:
 - A web browser (Google Chrome, Firefox, etc.)
 - A code editor (VS Code, Sublime Text, etc.)
 
-### Installation Steps
+---
 
+### Basic Setup
 1. **Clone the Repository**:
    ```bash
    git clone git@github.com:ongerh/ClubConnect.git
@@ -60,41 +65,27 @@ Ensure you have the following installed on your machine:
 
 2. **Navigate into the project directory**:
    ```bash
-   cd clubconnect
+   cd ClubConnect
    ```
 
 3. **Open the project**:
-   You can simply open the `index.html` file in a web browser to view the website locally.
+   You can simply open the `./connect_home/cconnect.html` file in a web browser to view the website locally.
 
 4. **Optional**: If you have a local development server (e.g., [Live Server for VS Code](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)), use it to run the project for live reloading.
 
 ---
 
-## Project Structure
+### Installation Steps
+*In `ClubConnect/`:*
+1. **Install dependencies**:
+   Ensure you have a virtual environment activated (optional but recommended):
 
 ```bash
-clubconnect/
-│
-├── index.html          # Main entry point for the website
-├── css/
-│   └── styles.css      # Custom CSS file for additional styles
-├── js/
-│   └── script.js       # Custom JavaScript file (if applicable)
-├── assets/
-│   ├── img/            # Images used for the carousel and other sections
-│   └── videos/         # Videos for club presentations
-└── README.md           # Project documentation
-```
+pip install -r requirements.txt
+````
 
 ---
 ## Usage
-*In `ClubConnect/`:*
-1. **Install dependencies**: 
-```bash
-pip install -r requirements.txt
-```
-  , ensure you have a virtual environment activated
-
 2. **Run the ClubConnect server**:
 ```bash
 python3 backend/api_server.py
@@ -104,10 +95,34 @@ python3 backend/api_server.py
 python3 -m http.server -d . 8088
 ```
 
-
 4. **Render the web page**
 - navigate to [Club Connect website](http://localhost:8088/connect_home/cconnect.html)
 ---
+
+## Project Structure
+
+```bash
+clubconnect/
+├── assets/
+│   ├── img/              # Images used for the carousel and other sections
+│   └── videos/           # Videos for club presentations
+├── backend/
+│   ├── api_server.py     # The server for the website's backend
+│   └── uploads/          # Local file storage for uploads
+├── connect_home/
+│   ├── cconnect.html     # Main entry point for the website
+│   └── ccstyles.css      # Custom CSS file for additional styles
+├── forms/
+│   ├── form.css                 # Custom form styling
+│   ├── SubmitContent.html       # Submit content form
+│   ├── submitTestimonial.html   # Submit a testimonial form
+│   └── submitTestimonial.js     # JavaScript for form interactions
+├── requirements.txt      # Python dependencies
+└── README.md             # Project documentation
+```
+
+---
+
 
 ## License
 
