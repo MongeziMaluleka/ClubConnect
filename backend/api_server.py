@@ -58,7 +58,7 @@ def upload_file_to_drive(file_path):
         return None  # Return None or handle it as you see fit
 
 
-@app.route('/submit', methods=['POST'])
+@app.route('/submit-testimonial', methods=['POST'])
 def submit_testimonial():
     if 'testimonial' not in request.form or 'name' not in request.form:
         return jsonify({"error": "Testimonial and Name are required."}), 400

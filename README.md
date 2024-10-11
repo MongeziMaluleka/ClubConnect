@@ -87,6 +87,27 @@ clubconnect/
 ```
 
 ---
+## Usage
+*In `ClubConnect/`:*
+1. **Install dependencies**: 
+```bash
+pip install -r requirements.txt
+```
+  , ensure you have a virtual environment activated
+
+2. **Run the ClubConnect server**:
+```bash
+python3 backend/api_server.py
+```
+3. **Run the web server on port 8088**:  (*ensure you are in the ClubConnect directory*)
+```bash
+python3 -m http.server -d . 8088
+```
+
+
+4. **Render the web page**
+- navigate to [Club Connect website](http://localhost:8088/connect_home/cconnect.html)
+---
 
 ## License
 
