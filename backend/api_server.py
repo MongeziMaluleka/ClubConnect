@@ -22,11 +22,11 @@ SCOPES = ['https://www.googleapis.com/auth/drive.file']
 def authenticate_drive():
     """Authenticates and returns a Google Drive API service instance using a service account."""
     # Path to the service account key file
-    SERVICE_ACCOUNT_FILE = os.getenv('SERVICE_ACCOUNT_FILE')
+    TESTIMONIAL_SERVICE_KEY = os.getenv('TESTIMONIAL_SERVICE_KEY')
 
     # Create credentials using the service account file
     creds = Credentials.from_service_account_file(
-        SERVICE_ACCOUNT_FILE,
+        TESTIMONIAL_SERVICE_KEY,
         scopes=SCOPES
     )
 
@@ -42,7 +42,10 @@ def upload_file_to_drive(file_path):
         service = authenticate_drive()
 
         # Create a media file upload instance
-        file_metadata = {'name': os.path.basename(file_path)}
+        file_metadata = {
+            'name': os.path.basename(file_path), 
+            'parents':['1aSrb6XUge091IME5ltIcZCd_UIjcsWCS']
+            }
         media = MediaFileUpload(file_path, mimetype='application/octet-stream')
 
         # Upload the file to Google Drive
