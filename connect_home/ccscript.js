@@ -1,5 +1,10 @@
 // const Queue = require('./queue'); // Import the Queue class
 
+function capitalize(str) {
+    if (str.length === 0) return str; // Handle empty strings
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 function preloadImage(url) {
     return new Promise((resolve, reject) => {
         const img = new Image();
@@ -36,7 +41,7 @@ function renderTestimonials() {
             for (let i = 0; i < data.length; ++i) {
                 const testimonialMetaData = data[i];
                 const finalData = {
-                    name: testimonialMetaData.name,
+                    name: capitalize(testimonialMetaData.name),
                     testimonial: testimonialMetaData.testimonial,
                     tagline: testimonialMetaData.tagline,
                     imageUrl: testimonialMetaData.uploaded_images && testimonialMetaData.uploaded_images.length > 0

@@ -224,3 +224,11 @@ div {
 }
 
 
+.testimonials-section {
+    display: flex;
+    justify-content: center;
+}
+
+.autofit-container {
+    min-width: fit-content;
+}
