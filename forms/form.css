@@ -10,9 +10,33 @@ body {
 
 .scrollable-container {
     max-height: 720px; /* Set the maximum height */
-    overflow-y: auto;  /* Enable vertical scrolling */
-    overflow-x: hidden; /* Disable horizontal scrolling */
+    overflow: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #add8e6 slategray;
     border: 1px solid #ccc; /* Optional: Add a border for visibility */
+}
+
+.scrollable-container:hover {
+    overflow: auto;
+}
+
+.scrollable-container::-webkit-scrollbar {
+    width: 0.6em;
+}
+
+.scrollable-container::-webkit-scrollbar-track {
+    background: slategray;
+    border-radius: 10px;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+    background: #add8e6;
+    border: 2px solid slategray;
+    border-radius: 10px;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb:hover {
+    background: #ddd;
 }
 
 .form-container {
@@ -20,7 +44,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 600px;
-    padding: 20px;
+    padding: 3em;
     margin: 10px;
     width: 100%;
 }
@@ -61,7 +85,7 @@ body {
 }
 
 .submit-btn {
-    background-color: #4caf50;
+    background-color: #7bc6d9;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -72,7 +96,7 @@ body {
 }
 
 .submit-btn:hover {
-    background-color: #45a049;
+    background-color: #5c8996;
 }
 
 @media (max-width: 600px) {

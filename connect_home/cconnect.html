@@ -37,6 +37,12 @@
                   <li><a class="dropdown-item" href="#peer-club">Peer Lift</a></li>
                 </ul>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#activities-section">Activities</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#new-testimonials-section">Community</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -234,10 +240,122 @@
       </div>
 
       <!-- Button to Add Testimonial-->
-      <div class="text-center mt-4">
+      <div id="new-testimonials-section" class="text-center mt-4">
         <a href="../forms/submitTestimonial.html" class="btn btn-primary">Add Your Testimonial</a>
       </div>
+
+
     </div>
+
+    <!-- Add New Testimonials Section -->
+    <section class="container-fluid testimonials-section p-2 m-5">
+      <!-- Button trigger modal -->
+      <button id="add-testimonial" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+      </button>
+
+      <!--    Modal for add testimonial form -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="scrollable-container form-container">
+                <h2>Submit Your Testimonial</h2>
+                <form action="http://127.0.0.1:5000/submit-testimonial" method="post" enctype="multipart/form-data">
+                  <div class="form-group">
+                    <label for="testimonial">
+                      Your Testimonial
+                      <span class="input-error" id="testimonial-error" style="font-weight: 300; font-style: italic; color: brown;"></span>
+                    </label>
+                    <textarea
+                            id="testimonial"
+                            name="testimonial"
+                            maxlength="500"
+                            placeholder="Write your testimonial here..."
+                            oninput="reportWordCount('testimonial-char-count', 'testimonial', 500)"
+                    ></textarea>
+                    <span id="testimonial-char-count">0/500</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="tagline">
+                      Your Tagline
+                      <span class="input-error" id="tagline-error" style="font-weight: 300; font-style: italic; color: brown;"></span>
+                    </label>
+                    <textarea
+                            id="tagline"
+                            name="tagline"
+                            maxlength="100"
+                            placeholder="Write your tagline here..."
+                            oninput="reportWordCount('tagline-char-count', 'tagline', 100)"
+                    ></textarea>
+                    <div class="tagline-helper" style="display: flex; justify-content: space-between; align-content: baseline">
+                      <span id="tagline-char-count">0/100</span>
+                      <span class="helper-text" style="font-style: italic; font-weight: 200; font-size: 0.9em">Include the club(s) and your role. role examples: Member, Facilitator, Founder etc.</span>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label  for="username">Your Username
+                      <span class="input-error" id="username-error" style="font-weight: 300; font-style: italic; color: brown;"></span>
+                    </label>
+                    <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Enter your WeThinkCode_ username"
+                    />
+                    <span class="helper-text" style="font-style: italic; text-align: right; font-weight: 200; font-size: 0.9em">This is for validation purposes</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name">Your Name
+                      <span class="input-error" id="name-error" style="font-weight: 300; font-style: italic; color: brown;"></span>
+                    </label>
+                    <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                    />
+                    <span class="helper-text" style="font-style: italic; text-align: right; font-weight: 200; font-size: 0.9em">This is the name that will appear on your testimonial</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="image">
+                      Upload Your Image
+                      <span class="input-error" id="image-error" style="font-weight: 300; font-style: italic; color: brown;"></span>
+                    </label>
+                    <input
+                            type="file"
+                            id="image"
+                            name="image"
+                            accept="image/*"
+                    />
+                    <span id="supported-formats" class="helper-text" style="font-style: italic; text-align: right; font-weight: 200; font-size: 0.9em">Supported image formats: JPEG, JPG, PNG, SVG </span>
+                  </div>
+
+                  <button type="submit" class="submit-btn">Submit Testimonial</button>
+                  <button type="save" class="save-btn">Save Draft</button>
+                  <p id="report-form-submission-outcome"></p>
+                </form>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+
 
     <!-- New Testimonials section -->
      <script id="testimonial-template" type="text/handlebars-template">
@@ -296,103 +414,104 @@
     </div>
   </footer>
 
-    <!-- Modal for Halloween Gallery Carousel -->
-<div class="modal fade" id="halloweenGallery" tabindex="-1" aria-labelledby="carouselModalLabelH" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="carouselModalLabelH">Halloween Gallery</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-light bg-body-light" data-bs-theme="dark">
-        <div id="carouselExampleIndicatorsH" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide-to="4" aria-label="Slide 5"></button>
-          </div>
-          <div class="carousel-inner">
-            <!-- Carousel items for Halloween -->
-            <div class="carousel-item active">
-              <img class="d-block w-100" src="../assets/HalloweenGallery/Senzo01.jpg" alt="Halloween">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="../assets/HalloweenGallery/IMG_1870.jpg" alt="Halloween">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="../assets/HalloweenGallery/IMG_1873.jpg" alt="Halloween">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="../assets/HalloweenGallery/IMG_1875.jpg" alt="Halloween">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="../assets/HalloweenGallery/IMG_1878.jpg" alt="Halloween">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- Modal for Hackathons Gallery Carousel -->
-<div class="modal fade" id="hackathonsGallery" tabindex="-1" aria-labelledby="carouselModalLabelHackathon" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="carouselModalLabelHackathon">Hackathons Gallery</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-light bg-body-light" data-bs-theme="dark">
-        <div id="carouselExampleIndicatorsHackathon" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    <!-- Modal for Halloween Gallery Carousel -->
+    <div class="modal fade" id="halloweenGallery" tabindex="-1" aria-labelledby="carouselModalLabelH" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="carouselModalLabelH">Halloween Gallery</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="carousel-inner">
-            <!-- Carousel items for Hackathons -->
-            <div class="carousel-item active">
-              <img class="d-block w-100" src="../assets/hackathonContent/MukuruH.jpeg" alt="Mukuru Hackathon">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="../assets/hackathonContent/GirlCode-dbn-2.jpeg" alt="Mukuru Hackathon">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="../assets/hackathonContent/NERDMA-pops.jpeg" alt="Mukuru Hackathon">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="../assets/hackathonContent/DBN-Mukuru.jpeg" alt="Mukuru Hackathon">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="../assets/hackathonContent/Nokubonga'sTeam-Mukuru.jpeg" alt="Mukuru Hackathon">
+          <div class="modal-body text-light bg-body-light" data-bs-theme="dark">
+            <div id="carouselExampleIndicatorsH" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              </div>
+              <div class="carousel-inner">
+                <!-- Carousel items for Halloween -->
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="../assets/HalloweenGallery/Senzo01.jpg" alt="Halloween">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="../assets/HalloweenGallery/IMG_1870.jpg" alt="Halloween">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="../assets/HalloweenGallery/IMG_1873.jpg" alt="Halloween">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="../assets/HalloweenGallery/IMG_1875.jpg" alt="Halloween">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="../assets/HalloweenGallery/IMG_1878.jpg" alt="Halloween">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicatorsH" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
       </div>
     </div>
-  </div>
-</div>
+
+    <!-- Modal for Hackathons Gallery Carousel -->
+    <div class="modal fade" id="hackathonsGallery" tabindex="-1" aria-labelledby="carouselModalLabelHackathon" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="carouselModalLabelHackathon">Hackathons Gallery</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-light bg-body-light" data-bs-theme="dark">
+            <div id="carouselExampleIndicatorsHackathon" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              </div>
+              <div class="carousel-inner">
+                <!-- Carousel items for Hackathons -->
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="../assets/hackathonContent/MukuruH.jpeg" alt="Mukuru Hackathon">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="../assets/hackathonContent/GirlCode-dbn-2.jpeg" alt="Mukuru Hackathon">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="../assets/hackathonContent/NERDMA-pops.jpeg" alt="Mukuru Hackathon">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="../assets/hackathonContent/DBN-Mukuru.jpeg" alt="Mukuru Hackathon">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="../assets/hackathonContent/Nokubonga'sTeam-Mukuru.jpeg" alt="Mukuru Hackathon">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicatorsHackathon" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 
@@ -400,8 +519,13 @@
     <script src="https://cdn.jsdelivr.net/npm/vanilla-router@1.2.8/index.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="ccscript.js"></script>
+    <script src="../forms/submitTestimonial.js"></script>
  </html>

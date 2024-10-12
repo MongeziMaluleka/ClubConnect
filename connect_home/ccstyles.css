@@ -114,3 +114,113 @@ div {
     transition: transform 0.3s ease-in-out;
     box-shadow: 0 5px 12px #89b0f0;
 }
+
+/* form styles*/
+.scrollable-container {
+    max-height: 720px; /* Set the maximum height */
+    overflow: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #add8e6 slategray;
+    border: 1px solid #ccc; /* Optional: Add a border for visibility */
+}
+
+.scrollable-container:hover {
+    overflow: auto;
+}
+
+.scrollable-container::-webkit-scrollbar {
+    width: 0.6em;
+}
+
+.scrollable-container::-webkit-scrollbar-track {
+    background: slategray;
+    border-radius: 10px;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+    background: #add8e6;
+    border: 2px solid slategray;
+    border-radius: 10px;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb:hover {
+    background: #ddd;
+}
+
+.form-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    padding: 3em;
+    margin: 10px;
+    width: 100%;
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+.form-group input[type="file"] {
+    padding: 3px;
+}
+
+.submit-btn {
+    background-color: #7bc6d9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #5c8996;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+

@@ -1,5 +1,14 @@
 // const Queue = require('./queue'); // Import the Queue class
 
+function preloadImage(url) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = url;
+        img.onload = () => resolve(url);
+        img.onerror = () => reject(url);
+    });
+}
+
 function renderTestimonials() {
     const options = {
         method: 'GET',
@@ -23,32 +32,37 @@ function renderTestimonials() {
 
             const testimonialsArray = [];
             let resultsHTML = '';
+
             for (let i = 0; i < data.length; ++i) {
                 const testimonialMetaData = data[i];
                 const finalData = {
                     name: testimonialMetaData.name,
                     testimonial: testimonialMetaData.testimonial,
                     tagline: testimonialMetaData.tagline,
-                    imageUrl: `https://drive.google.com/uc?id=${testimonialMetaData.uploaded_images[0].imageId}` 
+                    imageUrl: testimonialMetaData.uploaded_images && testimonialMetaData.uploaded_images.length > 0
+                        ? `https://drive.google.com/thumbnail?id=${testimonialMetaData.uploaded_images[0].imageId}`
+                        : 'https://drive.google.com/thumbnail?id=1vI7JBJYij-FxEAzA5VRM_30hv3bASSTo'
                 };
 
                 testimonialsArray.push(finalData);
                 console.log(finalData);
             }
 
-            // Compile Handlebars template for each testimonial
-            const template = document.getElementById('testimonial-template').innerText;
-            const compiledFunction = Handlebars.compile(template);
-            resultsHTML += compiledFunction({ testimonials: testimonialsArray.slice().reverse()});
+            // Preload images before rendering
+            Promise.all(testimonialsArray.map(testimonial => preloadImage(testimonial.imageUrl)))
+                .then(() => {
+                    const template = document.getElementById('testimonial-template').innerText;
+                    const compiledFunction = Handlebars.compile(template);
+                    const resultsHTML = compiledFunction({ testimonials: testimonialsArray.slice().reverse() });
 
-            // Check if the target element exists before setting innerHTML
-            const newbiesElement = document.getElementById('new-testimonials');
-            console.log(newbiesElement);
-            if (newbiesElement) {
-                newbiesElement.innerHTML = resultsHTML;
-            } else {
-                console.error("Element with ID 'new-testimonials' not found.");
-            }
+                    const newbiesElement = document.getElementById('new-testimonials');
+                    if (newbiesElement) {
+                        newbiesElement.innerHTML = resultsHTML;                         // ensure newbies exist before accessing or attempting to reassign
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading images:', error);
+                });
         })
         .catch(error => {
             // Log error and provide user feedback
@@ -75,3 +89,5 @@ window.addEventListener('DOMContentLoaded', () => {
     renderTestimonials();
   
 });
+
+
