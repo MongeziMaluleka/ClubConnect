@@ -52,13 +52,21 @@ def upload_file_to_drive(file_path):
         media = MediaFileUpload(file_path, mimetype='application/octet-stream')
 
         # Upload the file to Google Drive
-        file = service.files().create(body=file_metadata, media_body=media, fields='id').execute()
+        file = service.files().create(body=file_metadata, media_body=media, fields='id, webViewLink, webContentLink').execute()
         
-        print(f"Uploaded to Drive, File ID: {file.get('id')}")
-        return file.get('id')
+        # Update permissions to make the file accessible
+        permission_body = {
+            'role': 'reader',
+            'type': 'anyone',
+        }
+        service.permissions().create(fileId=file.get('id'), body=permission_body).execute()
+
+        print(f"Uploaded to Drive, File ID: {file.get('id')}", file.get('webViewLink') , sep="\n")
+        return file.get('webViewLink'), file.get('id')  # Return the webViewLink or webContentLink
     except Exception as e:
         print(f"An error occurred while uploading to Drive: {e}")
-        return None  # Return None or handle it as you see fit
+        return None  # Handle errors as needed
+
 
 def extract_testimonial_data():
     return APP_SERVICE_PROVIDER.read_testimonial_data_from_json()
@@ -66,7 +74,7 @@ def extract_testimonial_data():
 def persist_testimonial_data_to_json(data):
     APP_SERVICE_PROVIDER.write_testimonial_data_to_json(data)
 
-@app.route('/new-testimonials', methods=['POST'])
+@app.route('/new-testimonials', methods=['GET'])
 def render_new_testimonials():
     data = extract_testimonial_data()
     return jsonify({'message': 'successfully fetched testimonial data', 'data': data}), 201
@@ -93,10 +101,12 @@ def submit_testimonial():
             image.save(filepath)
             print(f"Saved file to: {filepath}")
             # Upload each image to Google Drive and generate a map of its details
+            image_url, image_id = upload_file_to_drive(filepath)
             images_id_to_path_map_collection.append(
                 {
                     "image_file_name": os.path.basename(filepath),
-                    "imageId": upload_file_to_drive(filepath)
+                    "imageId": image_id,
+                    "imageUrl": image_url
                 })
 #     prepare data for json body and persistence
     data = {

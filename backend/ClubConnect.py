@@ -28,3 +28,6 @@ class ClubConnect:
     def read_testimonial_data_from_json(self):
         return (load_json(self.__class__.TESTIMONIAL_DATA_PATH))
 
+    def reload_from_file(self):
+        pass
+

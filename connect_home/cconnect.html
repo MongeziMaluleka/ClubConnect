@@ -240,34 +240,37 @@
     </div>
 
     <!-- New Testimonials section -->
-     <script id="dynamic-testimonials" type="text/handlebars-template">
-        <section class="container-fluid new-testimonials p-2 m-5">
-            <div class="container p-2">
-                <h2>More of What Our Members Say</h2>
-                <!-- testimonial template -->
-                <ol>
-                  {{#each newTestimonial}}
-                  <li class="testimonial">
-                    <div class="card p-2 m-3">
-                      <div class="card-header">
-                        <div class="avatar"><img src={`../assets/${this.avatarImage}`}  alt={`${this.name}Picture`}/></div>
-                      </div>
-                      <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                          <p>{{this.testimonial}}</p>
-                          <footer class="blockquote-footer">{{this.name}}, <cite title="Source Title">{{this.tagline}</cite></footer>
-                        </blockquote>
-                      </div>
-                    </div>
-                  </li>
-                </ol>
+     <script id="testimonial-template" type="text/handlebars-template">
+      <ol>
+        {{#each testimonials}}
+        <li class="testimonial">
+          <div class="card p-2 m-3">
+            <div class="card-header">
+              <div class="avatar"><img src={{this.imageUrl}}  alt="{{this.name}} Picture"/></div>
             </div>
-        </section>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p>{{this.testimonial}}</p>
+                <footer class="blockquote-footer">{{this.name}}, <cite title="Source Title">{{this.tagline}}</cite></footer>
+              </blockquote>
+            </div>
+          </div>
+        </li>
+        {{/each}}
+      </ol>
      </script>
 
-     <div id="newbies">
-        
-     </div>
+     <script id="dynamic-testimonial" type="text/handlebars-template">
+      
+     </script>
+
+     <section class="container-fluid new-testimonials p-2 m-5">
+      <div class="container p-2">
+        <h2>More of What Our Members Say</h2>
+        <div id="new-testimonials">
+        </div>
+      </div>
+    </section>
     
 
     <!-- Content Submission Section-->
