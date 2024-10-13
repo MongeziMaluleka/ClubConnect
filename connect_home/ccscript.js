@@ -6,7 +6,7 @@ function hideLoader() {
     loader.style.opacity = "0";
     setTimeout(function(){
         loader.style.display = "none";
-    }, 250000); // Fade out and remove loader
+    }, 1500); // Fade out and remove loader
 }
 
 window.onload = function(){

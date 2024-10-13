@@ -38,7 +38,7 @@ width: 100%;
 border-radius: 50%;
 border: 5px solid #4f88e3;
 border-top-color: transparent;
-/* animation: rotate 1.5s linear infinite; */
+animation: rotate 1.5s linear infinite;
 }
 @keyframes rotate {
     100%{
