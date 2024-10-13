@@ -115,13 +115,16 @@ div {
     box-shadow: 0 5px 12px #89b0f0;
 }
 
+/* modal styles */
+
+
 /* form styles*/
 .scrollable-container {
     max-height: 720px; /* Set the maximum height */
     overflow: hidden;
     scrollbar-width: thin;
-    scrollbar-color: #add8e6 slategray;
-    border: 1px solid #ccc; /* Optional: Add a border for visibility */
+    scrollbar-color: #add8e6 white;
+    border: 2em solid #ffffff; /* Optional: Add a border for visibility */
 }
 
 .scrollable-container:hover {
@@ -130,16 +133,17 @@ div {
 
 .scrollable-container::-webkit-scrollbar {
     width: 0.6em;
+    margin-top: 20%;
 }
 
 .scrollable-container::-webkit-scrollbar-track {
-    background: slategray;
+    background: white;
     border-radius: 10px;
 }
 
 .scrollable-container::-webkit-scrollbar-thumb {
     background: #add8e6;
-    border: 2px solid slategray;
+    border: 2px solid white;
     border-radius: 10px;
 }
 
@@ -147,18 +151,42 @@ div {
     background: #ddd;
 }
 
+#close{
+    right: 0;
+    top: 0;
+}
+
+.sub-top-level-content{
+    background-color: #add8e6;
+    border-radius: 50%;
+    width: fit-content;
+    padding: 0.3em
+}
+
+.transform-grow-on-hover {
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.transform-grow-on-hover:hover {
+    transform: scale(1.2); /* Grow by a factor of 1.2 */
+}
+
+.top-level-content{
+    z-index:1000;
+}
+
 .form-container {
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    padding: 3em;
+    min-width: 600px;
+    padding: 1em;
     margin: 10px;
     width: 100%;
 }
 
 .form-container h2 {
-    text-align: center;
+    text-align: left;
     color: #333;
     margin-bottom: 20px;
 }
@@ -173,6 +201,7 @@ div {
     font-weight: bold;
     margin-bottom: 5px;
     color: #555;
+    text-align: left;
 }
 
 .form-group input,
@@ -192,6 +221,20 @@ div {
     padding: 3px;
 }
 
+fieldset {
+    border: 2px solid #ccc;
+    border-top: none;
+    padding: 10px;
+    margin-bottom: 2.5em;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+    text-align: left;
+}
+
+
 .submit-btn {
     background-color: #7bc6d9;
     color: white;
@@ -205,6 +248,21 @@ div {
 
 .submit-btn:hover {
     background-color: #5c8996;
+}
+
+.white-btn{
+    background-color: #ffffff; 
+    border: 2px solid white;
+    transition: all 0.3s ease-in;
+    text-decoration: underline;
+    color: #4f88e3;
+    padding: 10px 20px;
+}
+
+.white-btn:hover{
+    background-color: #f5f2f2;
+    border: 1px solid #5c8996;
+    border-radius: 5px;
 }
 
 @media (max-width: 600px) {

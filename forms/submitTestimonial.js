@@ -1,5 +1,22 @@
 const form = document.querySelector('form');
 
+const validateUsername = async (username) => {
+    const options = {
+        method: 'GET',
+    };
+    try{
+        const response = await fetch(`http://localhost:5000/validate-username/${username}`, options);
+        if (!response.ok) {
+            throw new Error(`Username ${username} not found, status: ${response.statusText}`);
+        }
+        return response.ok;
+    } catch (error) {
+        console.error('Error validating username:', error);
+        return false; 
+    }
+
+};
+
 const reportWordCount = (currentCharacterCountId, testimonialItemId, wordCountThreshold) => {
     const characterCount = document.getElementById(currentCharacterCountId);
     const testimonial = document.getElementById(testimonialItemId);
@@ -13,9 +30,9 @@ const reportWordCount = (currentCharacterCountId, testimonialItemId, wordCountTh
     console.log(testimonial.value.length);
 };
 
-const handleSubmit = (event) => {
+const handleSubmit = async (event) => {
     event.preventDefault();
-    const isValid = validateForm();
+    const isValid = await validateForm();
     const formSubmissionReport = document.getElementById('report-form-submission-outcome');
     if (isValid){
         const formData = new FormData(form);
@@ -41,7 +58,7 @@ const handleSubmit = (event) => {
 
 form.addEventListener('submit', handleSubmit);
 
-const validateForm = () => {
+const validateForm = async () => {
     // get form fields
     const testimonial = document.getElementById('testimonial');
     const tagline = document.getElementById('tagline');
@@ -65,7 +82,7 @@ const validateForm = () => {
     }
 
     // validate tagline character count
-    if (testimonial.value.length < 30) {
+    if (tagline.value.length < 30) {
         errorMessagesMap.tagline = 'Tagline must at least be 30 characters.';
         isValid = false;
     }
@@ -76,8 +93,10 @@ const validateForm = () => {
         isValid = false;
     }
 
-    // validate name field: should be filled in
-    if(!name.value.trim()) {
+    const username_value = username.value;
+    console.log(username_value);
+    // validate username field: should be filled in and should be valid
+    if(!username_value.trim() || !(await validateUsername(username_value))) {
         errorMessagesMap.username = 'A valid WeThinkCode username is required.';
         isValid = false;
     }
