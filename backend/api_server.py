@@ -117,6 +117,25 @@ def persist_testimonial_data_to_json(data):
     APP_SERVICE_PROVIDER.write_testimonial_data_to_json(data)
 
 
+@app.route('/validate-username/<username>', methods=['GET'])
+def validate_username(username):
+    """
+        Checks if the username supplied is valid and returns a JSON response.
+
+        This route extracts WTC student username data from the JSON file and looks for a matching username
+        It returns a JSON response with a success message if a match is found or an error message otherwise.
+
+        Returns:
+            flask.Response: A JSON response containing username validation outcome.
+    """
+    valid_usernames = APP_SERVICE_PROVIDER.load_valid_cohort_23_usernames_from_json()
+
+    error_username_not_found_response = {'result': 'error', 'message': f'"{username}" is not a valid WeThinkCode username.' }
+    ok_username_exists_response = {'result': 'ok', 'message': f'"{username}" is a valid WeThinkCode username.'}
+    response = (ok_username_exists_response, 200) if username in valid_usernames else (error_username_not_found_response, 404)
+    print(response)
+    return response
+
 @app.route('/new-testimonials', methods=['GET'])
 def render_new_testimonials():
     """
