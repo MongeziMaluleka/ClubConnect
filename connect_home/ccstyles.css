@@ -1,3 +1,51 @@
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* loading screen background container styles */
+.loader{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    transition: all 0.5s;
+}
+/* track (outer) ring */
+.loader .ring{
+height: 45px;
+width: 45px;
+border: 5px solid #ddd;
+border-radius: 50%;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.loader .ring::after{
+position: absolute;
+content: "";
+height: 100%;
+width: 100%;
+border-radius: 50%;
+border: 5px solid #4f88e3;
+border-top-color: transparent;
+/* animation: rotate 1.5s linear infinite; */
+}
+@keyframes rotate {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
 /* Ensure the carousel inner content is centered */
 .carousel-item {
   padding-left: 25%;
@@ -243,7 +291,6 @@ legend {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 10px;
 }
 
 .submit-btn:hover {

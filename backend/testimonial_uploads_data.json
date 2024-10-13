@@ -11,5 +11,31 @@
                 "imageUrl": "https://drive.google.com/file/d/1Pad0f_EXClXixXMPGdmCqIVdgYfL9g45/view?usp=drivesdk"
             }
         ]
+    },
+    {
+        "testimonial": "Thanks to the Break the Silence Society, I overcame my shyness and confidently presented at a recorded livestream event. The support from my peers has been life-changing!",
+        "tagline": "Break The Silence Society Member & Women Think Code Member",
+        "username": "bntshantsha023",
+        "name": "bongiwe",
+        "uploaded_images": [
+            {
+                "image_file_name": "bongiwe-popeye.jpg",
+                "imageId": "1lmzdYSmoTTfJf4FkzMVu5gowoe5kYFyD",
+                "imageUrl": "https://drive.google.com/file/d/1lmzdYSmoTTfJf4FkzMVu5gowoe5kYFyD/view?usp=drivesdk"
+            }
+        ]
+    },
+    {
+        "testimonial": "\"Women Think Code has empowered me to pursue a career in tech with confidence.\"\r\n\r\n",
+        "tagline": "Women Think Code Member & TechWednesday Creator",
+        "username": "smzamo023",
+        "name": "ayakhanya",
+        "uploaded_images": [
+            {
+                "image_file_name": "ayakhanya-popeye.jpg",
+                "imageId": "1XAh1dBxPsPw9fh9FOLJha4Wok7bL2TCL",
+                "imageUrl": "https://drive.google.com/file/d/1XAh1dBxPsPw9fh9FOLJha4Wok7bL2TCL/view?usp=drivesdk"
+            }
+        ]
     }
 ]

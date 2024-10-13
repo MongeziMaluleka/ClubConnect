@@ -1,5 +1,18 @@
 // const Queue = require('./queue'); // Import the Queue class
 
+const loader = document.querySelector(".loader");
+
+function hideLoader() {
+    loader.style.opacity = "0";
+    setTimeout(function(){
+        loader.style.display = "none";
+    }, 250000); // Fade out and remove loader
+}
+
+window.onload = function(){
+    // You can optionally set a timeout here, but we will now move the hideLoader() call after testimonials are ready
+}
+
 function capitalize(str) {
     if (str.length === 0) return str; // Handle empty strings
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -64,6 +77,7 @@ function renderTestimonials() {
                     if (newbiesElement) {
                         newbiesElement.innerHTML = resultsHTML;                         // ensure newbies exist before accessing or attempting to reassign
                     }
+                    hideLoader();  // Move the loader removal here after testimonials and images are ready
                 })
                 .catch(error => {
                     console.error('Error loading images:', error);
@@ -77,6 +91,7 @@ function renderTestimonials() {
             if (newbiesElement) {
                 newbiesElement.innerHTML = '<p class="error">Failed to load testimonials. Please try again later.</p>';
             }
+            hideLoader();  // Also hide the loader in case of an error
         });
 }
 
