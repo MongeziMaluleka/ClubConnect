@@ -19,11 +19,14 @@ function capitalize(str) {
 }
 
 function preloadImage(url) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         const img = new Image();
         img.src = url;
         img.onload = () => resolve(url);
-        img.onerror = () => reject(url);
+        img.onerror = () => {
+            console.warn('Error or aborted loading image, using fallback image:', url);
+            resolve('https://drive.google.com/thumbnail?id=1DcNNLl7eQpWALM3fyoIVmYVD0xalKmBB'); // Replace with a local or CDN-hosted placeholder image
+        };
     });
 }
 

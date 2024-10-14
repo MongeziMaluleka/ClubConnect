@@ -1,53 +1,14 @@
 [
     {
-        "testimonial": "Being a part of WeThinkCode_ and the Women Think Code community has been transformative for my journey in software development. The support and collaborative environment has empowered me to tackle complex problems and continuously improve.",
-        "tagline": "Top 50 Performing Student & Women Think Code Member",
-        "username": "smpungose023",
-        "name": "nokwanda",
-        "uploaded_images": [
-            {
-                "image_file_name": "NokwandaPic.jpg",
-                "imageId": "1Pad0f_EXClXixXMPGdmCqIVdgYfL9g45",
-                "imageUrl": "https://drive.google.com/file/d/1Pad0f_EXClXixXMPGdmCqIVdgYfL9g45/view?usp=drivesdk"
-            }
-        ]
-    },
-    {
-        "testimonial": "Thanks to the Break the Silence Society, I overcame my shyness and confidently presented at a recorded livestream event. The support from my peers has been life-changing!",
-        "tagline": "Break The Silence Society Member & Women Think Code Member",
-        "username": "bntshantsha023",
-        "name": "bongiwe",
-        "uploaded_images": [
-            {
-                "image_file_name": "bongiwe-popeye.jpg",
-                "imageId": "1lmzdYSmoTTfJf4FkzMVu5gowoe5kYFyD",
-                "imageUrl": "https://drive.google.com/file/d/1lmzdYSmoTTfJf4FkzMVu5gowoe5kYFyD/view?usp=drivesdk"
-            }
-        ]
-    },
-    {
-        "testimonial": "Women Think Code has empowered me to pursue a career in tech with confidence.",
-        "tagline": "Women Think Code Member & TechWednesdays Co-Creator",
+        "testimonial": "this is shown when an error occurs during testimonial rendering",
+        "tagline": "placeholder avatar image for testimonials",
         "username": "smzamo023",
-        "name": "ayakhanya",
+        "name": "sinomtha",
         "uploaded_images": [
             {
-                "image_file_name": "ayakhanya-popeye.jpg",
-                "imageId": "1XAh1dBxPsPw9fh9FOLJha4Wok7bL2TCL",
-                "imageUrl": "https://drive.google.com/file/d/1XAh1dBxPsPw9fh9FOLJha4Wok7bL2TCL/view?usp=drivesdk"
-            }
-        ]
-    },
-    {
-        "testimonial": "As an aspiring fullstack developer, contributing to open source projects like minesweeper has been an eye-opener for me. I am excited to explore any future projects!",
-        "tagline": "TechWednesdays Minesweeper contributor.\r\n",
-        "username": "mmaluleka023",
-        "name": "mongezi",
-        "uploaded_images": [
-            {
-                "image_file_name": "solana.jpg",
-                "imageId": "121XuHswg7isQBwy4uzFddix-QvfmWY6N",
-                "imageUrl": "https://drive.google.com/file/d/121XuHswg7isQBwy4uzFddix-QvfmWY6N/view?usp=drivesdk"
+                "image_file_name": "avatar-fallback.png",
+                "imageId": "1DcNNLl7eQpWALM3fyoIVmYVD0xalKmBB",
+                "imageUrl": "https://drive.google.com/file/d/1DcNNLl7eQpWALM3fyoIVmYVD0xalKmBB/view?usp=drivesdk"
             }
         ]
     }
