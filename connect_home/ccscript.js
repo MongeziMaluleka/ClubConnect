@@ -84,6 +84,7 @@ function renderTestimonials() {
                 })
                 .catch(error => {
                     console.error('Error loading images:', error);
+                    hideLoader();
                 });
         })
         .catch(error => {
