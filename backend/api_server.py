@@ -132,7 +132,7 @@ def validate_username(username):
 
     error_username_not_found_response = {'result': 'error', 'message': f'"{username}" is not a valid WeThinkCode username.' }
     ok_username_exists_response = {'result': 'ok', 'message': f'"{username}" is a valid WeThinkCode username.'}
-    response = (ok_username_exists_response, 200) if username in valid_usernames else (error_username_not_found_response, 404)
+    response = (ok_username_exists_response, 200) if username.lower() in valid_usernames else (error_username_not_found_response, 404)
     print(response)
     return response
 

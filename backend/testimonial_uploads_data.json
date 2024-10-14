@@ -26,8 +26,8 @@
         ]
     },
     {
-        "testimonial": "\"Women Think Code has empowered me to pursue a career in tech with confidence.\"\r\n\r\n",
-        "tagline": "Women Think Code Member & TechWednesday Creator",
+        "testimonial": "Women Think Code has empowered me to pursue a career in tech with confidence.",
+        "tagline": "Women Think Code Member & TechWednesdays Co-Creator",
         "username": "smzamo023",
         "name": "ayakhanya",
         "uploaded_images": [
@@ -35,6 +35,19 @@
                 "image_file_name": "ayakhanya-popeye.jpg",
                 "imageId": "1XAh1dBxPsPw9fh9FOLJha4Wok7bL2TCL",
                 "imageUrl": "https://drive.google.com/file/d/1XAh1dBxPsPw9fh9FOLJha4Wok7bL2TCL/view?usp=drivesdk"
+            }
+        ]
+    },
+    {
+        "testimonial": "As an aspiring fullstack developer, contributing to open source projects like minesweeper has been an eye-opener for me. I am excited to explore any future projects!",
+        "tagline": "TechWednesdays Minesweeper contributor.\r\n",
+        "username": "mmaluleka023",
+        "name": "mongezi",
+        "uploaded_images": [
+            {
+                "image_file_name": "solana.jpg",
+                "imageId": "121XuHswg7isQBwy4uzFddix-QvfmWY6N",
+                "imageUrl": "https://drive.google.com/file/d/121XuHswg7isQBwy4uzFddix-QvfmWY6N/view?usp=drivesdk"
             }
         ]
     }

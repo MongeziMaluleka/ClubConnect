@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Screen Loader | CodingNepal</title>
+      <link rel="stylesheet" href="load.css">
+   </head>
+   <body>
+      <div class="loader">
+         <div class="ring"></div>
+      </div>
+      <div class="content">
+         <div class="image"></div>
+         <div class="text">
+            <div class="title">
+               Screen Loader in HTML CSS & JavaScript
+            </div>
+            <p>
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora dicta corporis animi maxime provident quisquam soluta ducimus optio suscipit in aperiam a dolores vitae adipisci numquam, maiores quos. Nisi ducimus culpa, atque obcaecati quos, voluptatibus, in hic nobis omnis doloremque amet optio! Amet cumque temporibus error quia unde. Vero laborum suscipit ad fuga veniam, id, quo dolores officia, deserunt rerum eveniet perferendis reiciendis. Itaque nostrum incidunt quo! Aperiam sint quod inventore vitae, sapiente ducimus voluptas doloremque. Ducimus temporibus laboriosam illo quidem, laborum officiis esse maiores doloribus aperiam accusantium sed, ullam ad fugit quam at saepe animi optio repudiandae quaerat ipsam officia est corrupti magnam veniam. Enim voluptatum totam hic dignissimos nostrum magni at nobis quos dolorem, nihil? Ipsum sapiente tempora exercitationem obcaecati, odio ratione optio, voluptatem delectus accusamus dignissimos sunt minima beatae, eveniet. Sint, explicabo, quisquam! Est aspernatur officiis omnis laboriosam, at id aliquam ea quidem quae, architecto et nisi!
+            </p>
+            <p>
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id itaque excepturi officiis obcaecati accusamus alias, vero molestiae distinctio dolores quasi voluptatibus doloribus eum illo est qui, cum, deserunt eligendi at impedit quibusdam culpa suscipit. Ipsum officiis beatae quasi voluptatem magnam ut itaque consequatur quos maiores. Unde nihil aliquid, modi sapiente illo, quasi aspernatur, a cum error aut sint, placeat alias! Maxime voluptatum id tempora sed quia cupiditate laudantium veritatis minima! Impedit perspiciatis adipisci nesciunt est quod molestiae, eum minima animi, facilis fugiat ea ipsum a fuga distinctio labore aperiam officiis maxime voluptates! Ea assumenda quaerat ipsum fuga molestias illo, similique.
+            </p>
+         </div>
+      </div>
+      <script>
+         const loader = document.querySelector(".loader");
+         window.onload = function(){
+           setTimeout(function(){
+             loader.style.opacity = "0";
+             setTimeout(function(){
+               loader.style.display = "none";
+             }, 500);
+           },1500);
+         }
+      </script>
+   </body>
+</html>
