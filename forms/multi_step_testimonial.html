@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Testimonial</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./form-multi.css">
+</head>
+<body>
+    <form action="http://127.0.0.1:5000/submit-testimonial" method="post" enctype="multipart/form-data" testimonial-multi-step>
+        <!-- Profile/ Personal Information -->
+        <div class="form-card active" testimonial-step>
+            <!-- Username field -->
+            <div class="form-group">
+                <label  for="username">Your Username
+                  <span class="input-error" id="username-error" style="font-weight: 300; font-style: italic; color: brown;"></span>
+                </label>
+                <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Enter your WeThinkCode_ username"
+                />
+                <span class="helper-text" style="font-style: italic; text-align: right; font-weight: 200; font-size: 0.9em">This is for validation purposes</span>
+            </div>
+
+            <!-- Name field -->
+            <div class="form-group">
+                <label for="name">Your Name
+                    <span class="input-error" id="name-error" style="font-weight: 300; font-style: italic; color: brown;"></span>
+                </label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                />
+                <span class="helper-text" style="font-style: italic; text-align: right; font-weight: 200; font-size: 0.9em">This is the name that will appear on your testimonial</span>
+            </div>
+
+            <!-- Tagline field -->
+            <div class="form-group">
+                <label for="tagline">
+                    Your Tagline
+                    <span class="input-error" id="tagline-error" style="font-weight: 300; font-style: italic; color: brown;"></span>
+                </label>
+                <textarea
+                        id="tagline"
+                        name="tagline"
+                        maxlength="100"
+                        placeholder="Write your tagline here..."
+                        oninput="reportWordCount('tagline-char-count', 'tagline', 100)"
+                ></textarea>
+                <div class="tagline-helper" style="display: flex; justify-content: space-between; align-content: baseline">
+                    <span id="tagline-char-count">0/100</span>
+                    <span class="helper-text" style="font-style: italic; font-weight: 200; font-size: 0.9em">Include the club(s) and your role. <br> role examples: Member, Facilitator, Founder etc.</span>
+                </div>
+            </div>
+
+            <!-- controls and pagination -->
+            <div class="modal-footer">
+                <button class="btn" type="button" testimonial-next>Next</button>
+                <button type="button" class="btn white-btn" data-bs-dismiss="modal">Close</button>
+                <button type="reset" class="white-btn">Clear Form</button>
+            </div>
+        </div>
+
+        <!-- Create Testimonial -->
+        <div class="form-card" testimonial-step>
+            <!-- Avatar field -->
+            <div class="form-group">
+                <label for="image">
+                Upload Your Image
+                <span class="input-error" id="image-error" style="font-weight: 300; font-style: italic; color: brown;"></span>
+                </label>
+                <input
+                        type="file"
+                        id="image"
+                        name="image"
+                        accept="image/*"
+                />
+                <span id="supported-formats" class="helper-text" style="font-style: italic; text-align: right; font-weight: 200; font-size: 0.9em">Supported image formats: JPEG, JPG, PNG, SVG </span>
+            </div>
+
+            <!-- Testimonial field -->
+            <div class="form-group">
+                <label for="testimonial">
+                Your Testimonial
+                <span class="input-error" id="testimonial-error" style="font-weight: 300; font-style: italic; color: brown;"></span>
+                </label>
+                <textarea
+                        id="testimonial"
+                        name="testimonial"
+                        maxlength="500"
+                        placeholder="Write your testimonial here..."
+                        oninput="reportWordCount('testimonial-char-count', 'testimonial', 500)"
+                ></textarea>
+                <span id="testimonial-char-count" style="text-align: left;">0/500</span>
+            </div>
+            <!-- controls and pagination -->
+            <div class="modal-footer">
+                <button class="btn" type="button" testimonial-back>Back</button>
+                <button class="btn" type="button" testimonial-next>Next</button>
+                <button type="button" class="btn white-btn" data-bs-dismiss="modal">Close</button>
+                <button type="reset" class="white-btn">Clear Form</button>
+            </div> 
+        </div>
+
+        <!-- Preview Testimonial -->
+        <div class="form-card" testimonial-step>
+            <div class="form-group">
+                <p>Preview Post</p>
+                <!-- dumza testimonial -->
+                <div class="card">
+                    <div class="card-header">
+                    <div class="avatar"><img src="../assets/dumza-popeye.jpg" /></div>
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>"Joining the Robotics Club has been a game-changer for me. I've learned so much and met amazing people!"</p>
+                            <footer class="blockquote-footer">Dumza, <cite title="Source Title">Robotics Club Member</cite></footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <!-- controls and pagination -->
+            <div class="modal-footer">
+                <button class="btn" type="button" testimonial-back>Back</button>
+                <button type="button" class="btn white-btn" data-bs-dismiss="modal">Close</button>
+                <button type="reset" class="white-btn">Clear Form</button>
+                <button type="submit" class="submit-btn">Submit Testimonial</button>
+            </div>
+            <p id="report-form-submission-outcome"></p>
+        </div>
+    </form>
+    <script src="./submitTestimonial.js"></script>
+</body>
+</html>

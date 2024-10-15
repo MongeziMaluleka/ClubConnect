@@ -162,8 +162,11 @@ def submit_testimonial():
         Returns:
             flask.Response: A JSON response indicating success or failure of the submission, along with the submitted data.
     """
-    if 'testimonial' not in request.form or 'name' not in request.form:
-        return jsonify({"error": "Testimonial and Name are required."}), 400
+    expected_fields = ['testimonial', 'tagline', 'username', 'name']
+    error_message = ' is missing from request body'
+    for field in expected_fields:
+        if field not in request.form:
+            return jsonify({'error': f'"{field}" is missing from request body.'}), 400
 
     # extract name and testimonial text
     testimonial = request.form['testimonial']

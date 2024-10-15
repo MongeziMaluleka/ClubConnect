@@ -165,8 +165,28 @@ div {
 
 /* modal styles */
 
+.modal-content .modal-body .form{
+    width: fit-content;
+    padding: 1em;
+}
 
 /* form styles*/
+.modal-content .modal-body .form .form-card{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background: #e9edf0;
+/*	align-items: center;*/
+	padding: 2em;
+	margin: 0 1em;
+	border: solid 2px lightyellow;
+	border-radius: 0.3em;
+	width: 30em;
+	display: none;
+}
+.modal-content .modal-body .form .form-card.active{
+	display: block;
+}
 .scrollable-container {
     max-height: 720px; /* Set the maximum height */
     overflow: hidden;

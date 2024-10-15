@@ -1,5 +1,33 @@
 const form = document.querySelector('form');
 
+const modal = document.getElementById('exampleModal');
+const formMultiStep = document.querySelector("[testimonial-multi-step]");
+const formSteps = [...document.querySelectorAll("[testimonial-step]")];
+
+let currentStep = 0; // Initialize current step
+
+modal.addEventListener('show.bs.modal', () => {
+    currentStep = 0; // Reset to first step
+    showCurrentStep(); // Show the first step when modal opens
+});
+
+formMultiStep.addEventListener("click", event => {
+    if (event.target.matches("[testimonial-next]")) {
+        currentStep += 1;
+    } else if (event.target.matches("[testimonial-back]")) {
+        currentStep -= 1;
+    }
+    showCurrentStep(); // Update the view after changing steps
+});
+
+function showCurrentStep() {
+    formSteps.forEach((step, index) => {
+        step.classList.toggle("active", index === currentStep);
+    });
+}
+
+
+
 const validateUsername = async (username) => {
     const options = {
         method: 'GET',
