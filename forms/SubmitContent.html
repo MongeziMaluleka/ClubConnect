@@ -1,48 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Submit Content</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="form.css">
+    <meta charset="UTF-8">
+    <title>Submit Content</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="form.css"   />
+
+    <script>
+        function validateName() {
+            const name = document.getElementById('name').value;
+            const nameError = document.getElementById('nameError');
+
+            // Check if the name is valid
+            if (name.length < 2 || !/^[a-zA-Z]+$/.test(name)) {
+                nameError.innerText = "Name must be at least 2 characters long and contain only letters.";
+                return false; // Name is invalid
+            } else {
+                nameError.innerText = ""; // Clear error
+                return true; // Name is valid
+            }
+        }
+
+        function validateEmail() {
+            const email = document.getElementById('email').value;
+            const emailError = document.getElementById('emailError');
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@wethinkcode\.co\.za$/;
+
+            // Check if the email is valid
+            if (!emailPattern.test(email)) {
+                emailError.innerText = "Email must end with 'student@wethinkcode.co.za'.";
+                return false; // Email is invalid
+            } else {
+                emailError.innerText = ""; // Clear error
+                return true; // Email is valid
+            }
+        }
+
+        function validateDescription() {
+            const description = document.getElementById('description').value;
+            const descriptionError = document.getElementById('descriptionError');
+
+            // Check if the description is valid
+            if (description.trim() === "") {
+                descriptionError.innerText = "Description is required.";
+                return false; // Description is invalid
+            } else {
+                descriptionError.innerText = ""; // Clear error
+                return true; // Description is valid
+            }
+        }
+
+        function validateForm(event) {
+            const isNameValid = validateName();
+            const isEmailValid = validateEmail();
+            const isDescriptionValid = validateDescription();
+
+            // Prevent form submission if any field is invalid
+            if (!isNameValid || !isEmailValid || !isDescriptionValid) {
+                event.preventDefault(); // Stop form submission
+                return false; // Form is invalid
+            }
+
+            return true; // Form is valid
+        }
+
+        // Add event listeners to input fields to validate on input
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('name').addEventListener('input', validateName);
+            document.getElementById('email').addEventListener('input', validateEmail);
+            document.getElementById('description').addEventListener('input', validateDescription);
+        });
+    </script>
 </head>
 <body>
 <div class="container mt-5">
-    <h2> Submit Your Content</h2>
-    <p> Use the form below to submit any content you'd like to see featured on our page.</p>
-
-    <form action="#" method="post" enctype="multipart/form-data">
-        <!--Name input-->
+    <h2>Submit Your Content</h2>
+    <form action="submit.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm(event);">
+        <!-- Name -->
         <div class="form-group">
-            <label for="name" class="form-label">Name</label>
+            <label for="name">Name</label>
             <input type="text" class="form-control" id="name" name="name" required>
+            <div id="nameError" class="text-danger"></div> <!-- Error message for name -->
         </div>
-
-        <!--Email input-->
+        <!-- Email -->
         <div class="form-group">
-            <label for="email" class="form-label">Enter email</label>
-            <input type="email" class="form-control" id="email" email="email" required>
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+            <div id="emailError" class="text-danger"></div> <!-- Error message for email -->
         </div>
-
-        <!--Content Description -->
+        <!-- Description -->
         <div class="form-group">
-            <label for="content description" class="form-label">content description</label>
-            <input type="text" class="form-control" id="content description" content description="content description" required>
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" name="description" required></textarea>
+            <div id="descriptionError" class="text-danger"></div> <!-- Error message for description -->
         </div>
-
-        <!--File Upload -->
+        <!-- File Upload -->
         <div class="form-group">
-            <label for="file" class="form-label">Upload File (Optional)</label>
-            <input type="file" class="form-control" id="file" file="file" multiple required>
+            <label for="file">Upload File</label>
+            <input type="file" class="form-control" id="file" name="file">
         </div>
-
-        <!-- File Upload-->
-        <div class="for-group">
-            <button type="submit" class="btn btn-secondary">Submit Content</button>
-        </div>
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-secondary mt-3">Submit</button>
     </form>
 </div>
-
 </body>
 </html>
+0
