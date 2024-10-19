@@ -169,6 +169,11 @@ div {
     width: fit-content;
     padding: 1em;
 }
+ 
+.error-focus {
+    border-color: brown;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
 
 /* form styles*/
 .modal-content .modal-body .form .form-card{
